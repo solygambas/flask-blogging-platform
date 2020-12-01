@@ -1,6 +1,6 @@
 # Blogging Platform
 
-A blogging platform using Flask, Jinja2 and PostgreSQL.
+A blogging platform using Flask, Jinja2 and Flask-SQLAlchemy.
 
 ## Demo
 
@@ -38,7 +38,7 @@ A blogging platform using Flask, Jinja2 and PostgreSQL.
 
 ## RESTful API
 
-- using a Flask-based RESTful API to expose app functionality to smartphones, tablets, and other third-party clients.
+- using a Flask-based RESTful API to expose app functionality to smartphones, tablets and other third-party clients.
 - managing user authentication with Flask-HTTPAuth and generating tokens.
 - serializing resources to and from JSON.
 - handling pagination of large resource collections.

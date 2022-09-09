@@ -1,4 +1,5 @@
 import os
+from utils import get_env_variable
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:

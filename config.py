@@ -1,7 +1,6 @@
 import os
 basedir = os.path.abspath(os.path.dirname(__file__))
 
-
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
     MAIL_SERVER = os.environ.get('MAIL_SERVER', 'smtp.mailtrap.io')
@@ -40,8 +39,18 @@ class TestingConfig(Config):
 
 
 class ProductionConfig(Config):
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-        'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+    POSTGRES_URL = get_env_variable('POSTGRES_URL')
+    POSTGRES_USER = get_env_variable('POSTGRES_USER')
+    POSTGRES_PASSWORD = get_env_variable('POSTGRES_PASSWORD')
+    POSTGRES_DB = get_env_variable('POSTGRES_DB')
+    uri_template = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'
+    SQLALCHEMY_DATABASE_URI = uri_template.format(
+        user=POSTGRES_USER,
+        pw=POSTGRES_PASSWORD,
+        url=POSTGRES_URL,
+        db=POSTGRES_DB)
+    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+    #     'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 
     @classmethod
     def init_app(cls, app):

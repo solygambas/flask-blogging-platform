@@ -4,11 +4,11 @@ A blogging platform using Flask, Jinja2 and Flask-SQLAlchemy.
 
 ## Demo
 
-[See Demo deployed on Render](https://flask-blogging-platform.onrender.com/)
+[See Demo deployed on Railway](https://flask-blogging-platform.up.railway.app/)
 
 <p align="center">
-  <a href="https://flask-blogging-platform.onrender.com/">
-    <img src="screenshot.png" alt="See Demo deployed on Render">
+  <a href="https://flask-blogging-platform.up.railway.app/">
+    <img src="screenshot.png" alt="See Demo deployed on Railway">
   </a>
 </p>
 
@@ -51,6 +51,6 @@ A blogging platform using Flask, Jinja2 and Flask-SQLAlchemy.
 
 ## Deployment
 
-- deploying on Render with a PostgreSQL database.
+- deploying on Railway with a PostgreSQL database.
 
 Based on [Flask Web Development](https://www.amazon.fr/Flask-Web-Development-Developing-Applications/dp/1491991739) by Miguel Grinberg (2nd edition, 2018)

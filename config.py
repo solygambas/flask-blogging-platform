@@ -1,5 +1,4 @@
 import os
-from utils import get_env_variable
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 class Config:
@@ -40,18 +39,8 @@ class TestingConfig(Config):
 
 
 class ProductionConfig(Config):
-    POSTGRES_URL = get_env_variable('POSTGRES_URL')
-    POSTGRES_USER = get_env_variable('POSTGRES_USER')
-    POSTGRES_PASSWORD = get_env_variable('POSTGRES_PASSWORD')
-    POSTGRES_DB = get_env_variable('POSTGRES_DB')
-    uri_template = 'postgresql+psycopg2://{user}:{pw}@{url}/{db}'
-    SQLALCHEMY_DATABASE_URI = uri_template.format(
-        user=POSTGRES_USER,
-        pw=POSTGRES_PASSWORD,
-        url=POSTGRES_URL,
-        db=POSTGRES_DB)
-    # SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
-    #     'sqlite:///' + os.path.join(basedir, 'data.sqlite')
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or \
+        'sqlite:///' + os.path.join(basedir, 'data.sqlite')
 
     @classmethod
     def init_app(cls, app):

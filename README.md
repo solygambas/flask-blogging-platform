@@ -3,9 +3,7 @@
 A blogging platform using Flask, Jinja2 and Flask-SQLAlchemy.
 
 <p align="center">
-  <a href="https://flask-blogging-platform.up.railway.app/">
-    <img src="screenshot.png" alt="See Demo deployed on Railway">
-  </a>
+    <img src="screenshot.png">
 </p>
 
 ## Flask basics
